@@ -21,13 +21,15 @@ class MainViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         
-        recalculateTotal()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        for i in 0...2 {
+            percentageControl.setTitle(String(SettingsManager.tipAmount(at: i)) + "%", forSegmentAt: i)
+        }
+        recalculateTotal()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,21 +52,7 @@ class MainViewController: UIViewController {
                 self.dividerLine.alpha = 0
             }, completion: nil)
         } else {
-            var percentage:Int = 0;
-            switch percentageControl.selectedSegmentIndex {
-            case 0:
-                percentage = 10
-                break
-            case 1:
-                percentage = 15
-                break
-            case 2:
-                percentage = 20
-                break
-            default:
-                break
-            }
-            
+            let percentage = SettingsManager.tipAmount(at: percentageControl.selectedSegmentIndex);
             let number = Decimal(string:text!)
             let oneHundred = Decimal(100)
             let tipAmount = (number! * Decimal(percentage)) / oneHundred as NSDecimalNumber

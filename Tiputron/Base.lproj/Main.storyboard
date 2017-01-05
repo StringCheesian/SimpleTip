@@ -141,7 +141,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="359" height="43"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -152,47 +152,47 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="A09-Fb-PNb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="x46-pQ-F5F">
                                         <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A09-Fb-PNb" id="cMb-ls-PgO">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x46-pQ-F5F" id="f4a-dj-ycC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-3V-CRU">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SlP-og-GRY">
                                                     <rect key="frame" x="16" y="0.0" width="359" height="43"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="WM0-3V-CRU" secondAttribute="bottom" id="8zN-0y-Cyy"/>
-                                                <constraint firstItem="WM0-3V-CRU" firstAttribute="leading" secondItem="cMb-ls-PgO" secondAttribute="leading" constant="16" id="Gu8-9u-5IO"/>
-                                                <constraint firstItem="WM0-3V-CRU" firstAttribute="top" secondItem="cMb-ls-PgO" secondAttribute="top" id="YI1-m8-w4B"/>
-                                                <constraint firstAttribute="trailing" secondItem="WM0-3V-CRU" secondAttribute="trailing" id="tNK-xX-KT7"/>
+                                                <constraint firstItem="SlP-og-GRY" firstAttribute="top" secondItem="f4a-dj-ycC" secondAttribute="top" id="2e7-8m-Z1K"/>
+                                                <constraint firstAttribute="trailing" secondItem="SlP-og-GRY" secondAttribute="trailing" id="XrI-QW-aCO"/>
+                                                <constraint firstItem="SlP-og-GRY" firstAttribute="leading" secondItem="f4a-dj-ycC" secondAttribute="leading" constant="16" id="laG-Ho-IcC"/>
+                                                <constraint firstAttribute="bottom" secondItem="SlP-og-GRY" secondAttribute="bottom" id="oB6-8i-0a0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="qh6-xw-q6d">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="djM-uc-pOl">
                                         <rect key="frame" x="0.0" y="144" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qh6-xw-q6d" id="ufb-UL-UEq">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="djM-uc-pOl" id="6mm-Qo-wwf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-T2-qf3">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n30-mr-6Fq">
                                                     <rect key="frame" x="16" y="0.0" width="359" height="43"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="jVm-T2-qf3" secondAttribute="trailing" id="GZH-em-Sok"/>
-                                                <constraint firstAttribute="bottom" secondItem="jVm-T2-qf3" secondAttribute="bottom" id="b5O-MC-po0"/>
-                                                <constraint firstItem="jVm-T2-qf3" firstAttribute="leading" secondItem="ufb-UL-UEq" secondAttribute="leading" constant="16" id="cUP-PM-xso"/>
-                                                <constraint firstItem="jVm-T2-qf3" firstAttribute="top" secondItem="ufb-UL-UEq" secondAttribute="top" id="iQd-l3-CnJ"/>
+                                                <constraint firstItem="n30-mr-6Fq" firstAttribute="top" secondItem="6mm-Qo-wwf" secondAttribute="top" id="PCt-77-fui"/>
+                                                <constraint firstItem="n30-mr-6Fq" firstAttribute="leading" secondItem="6mm-Qo-wwf" secondAttribute="leading" constant="16" id="l4x-A9-6Wg"/>
+                                                <constraint firstAttribute="bottom" secondItem="n30-mr-6Fq" secondAttribute="bottom" id="vuA-Ud-Ujz"/>
+                                                <constraint firstAttribute="trailing" secondItem="n30-mr-6Fq" secondAttribute="trailing" id="xTP-WR-RTs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
