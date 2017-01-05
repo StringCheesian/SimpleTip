@@ -60,12 +60,12 @@
 			children = (
 				3BDC94E61E1B1AEE00BA1698 /* AppDelegate.swift */,
 				3BDC94E81E1B1AEE00BA1698 /* MainViewController.swift */,
+				3BDC94F81E1B4FED00BA1698 /* SettingsViewController.swift */,
+				3BDC94FA1E1E0E0400BA1698 /* SettingsManager.swift */,
 				3BDC94EA1E1B1AEE00BA1698 /* Main.storyboard */,
 				3BDC94ED1E1B1AEE00BA1698 /* Assets.xcassets */,
 				3BDC94EF1E1B1AEE00BA1698 /* LaunchScreen.storyboard */,
 				3BDC94F21E1B1AEE00BA1698 /* Info.plist */,
-				3BDC94F81E1B4FED00BA1698 /* SettingsViewController.swift */,
-				3BDC94FA1E1E0E0400BA1698 /* SettingsManager.swift */,
 			);
 			path = Tiputron;
 			sourceTree = "<group>";
