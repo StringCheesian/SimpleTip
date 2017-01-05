@@ -20,6 +20,18 @@ class SettingsViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        for i in 0...2 {
+            let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0))
+            let textField = cell?.viewWithTag(1) as! UITextField
+            if let text = textField.text {
+                SettingsManager.setTipAmount(Int(text)!, atIndex: i)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

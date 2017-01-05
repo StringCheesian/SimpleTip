@@ -30,6 +30,7 @@ class SettingsManager {
     }
     
     public static func setTipAmount(_ amount: Int, atIndex index: Int) {
-        
+        UserDefaults.standard.set(amount, forKey: settingsCodeNames[index])
+        UserDefaults.standard.synchronize()
     }
 }
