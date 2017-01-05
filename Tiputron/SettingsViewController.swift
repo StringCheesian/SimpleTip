@@ -53,7 +53,7 @@ class SettingsViewController: UITableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
 
         let textField = cell .viewWithTag(1) as! UITextField
-        textField.text = String(SettingsManager.tipAmount(at: indexPath.row))
+        textField.text = String(SettingsManager.tipPercentage(at: indexPath.row))
 
         return cell
     }

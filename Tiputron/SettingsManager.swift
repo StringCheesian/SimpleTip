@@ -10,16 +10,16 @@ import UIKit
 
 class SettingsManager {
     private static let settingsCodeNames: [String] = [
-        "Settings.TipAmount1",
-        "Settings.TipAmount2",
-        "Settings.TipAmount3",
+        "Settings.tipPercentage1",
+        "Settings.tipPercentage2",
+        "Settings.tipPercentage3",
     ]
     
     private static var registerDefaults: () {
         UserDefaults.standard.register(defaults: [settingsCodeNames[0] : 10, settingsCodeNames[1] : 15, settingsCodeNames[2] : 20])
     }
     
-    public static func tipAmount(at index: Int) -> Int {
+    public static func tipPercentage(at index: Int) -> Int {
         if (index >= settingsCodeNames.count) {
             return 0
         }
@@ -29,7 +29,7 @@ class SettingsManager {
         return UserDefaults.standard.integer(forKey: settingsCodeNames[index])
     }
     
-    public static func setTipAmount(_ amount: Int, atIndex index: Int) {
+    public static func setTipPercentage(_ amount: Int, atIndex index: Int) {
         UserDefaults.standard.set(amount, forKey: settingsCodeNames[index])
         UserDefaults.standard.synchronize()
     }

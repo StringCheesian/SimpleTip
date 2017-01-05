@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         for i in 0...2 {
-            percentageControl.setTitle(String(SettingsManager.tipAmount(at: i)) + "%", forSegmentAt: i)
+            percentageControl.setTitle(String(SettingsManager.tipPercentage(at: i)) + "%", forSegmentAt: i)
         }
         recalculateTotal()
     }
@@ -52,16 +52,16 @@ class MainViewController: UIViewController {
                 self.dividerLine.alpha = 0
             }, completion: nil)
         } else {
-            let percentage = SettingsManager.tipAmount(at: percentageControl.selectedSegmentIndex);
+            let percentage = SettingsManager.tipPercentage(at: percentageControl.selectedSegmentIndex);
             let number = Decimal(string:text!)
             let oneHundred = Decimal(100)
-            let tipAmount = (number! * Decimal(percentage)) / oneHundred as NSDecimalNumber
+            let tipPercentage = (number! * Decimal(percentage)) / oneHundred as NSDecimalNumber
             let totalAmount = (number! * Decimal(percentage + 100)) / oneHundred as NSDecimalNumber
             
             let formatter = NumberFormatter()
             formatter.numberStyle = .currency
             formatter.locale = Locale.autoupdatingCurrent
-            tipLabel.text = "+ " + formatter.string(from: tipAmount)!
+            tipLabel.text = "+ " + formatter.string(from: tipPercentage)!
             totalLabel.text = formatter.string(from: totalAmount)
 
             if tipLabel.alpha < 1 || totalLabel.alpha < 1 {
