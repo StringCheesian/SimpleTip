@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BDC94E21E1B1AEE00BA1698"
-               BuildableName = "Tiputron.app"
-               BlueprintName = "Tiputron"
-               ReferencedContainer = "container:Tiputron.xcodeproj">
+               BuildableName = "Simple Tip.app"
+               BlueprintName = "Simple Tip"
+               ReferencedContainer = "container:Simple Tip.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BDC94E21E1B1AEE00BA1698"
-            BuildableName = "Tiputron.app"
-            BlueprintName = "Tiputron"
-            ReferencedContainer = "container:Tiputron.xcodeproj">
+            BuildableName = "Simple Tip.app"
+            BlueprintName = "Simple Tip"
+            ReferencedContainer = "container:Simple Tip.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BDC94E21E1B1AEE00BA1698"
-            BuildableName = "Tiputron.app"
-            BlueprintName = "Tiputron"
-            ReferencedContainer = "container:Tiputron.xcodeproj">
+            BuildableName = "Simple Tip.app"
+            BlueprintName = "Simple Tip"
+            ReferencedContainer = "container:Simple Tip.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BDC94E21E1B1AEE00BA1698"
-            BuildableName = "Tiputron.app"
-            BlueprintName = "Tiputron"
-            ReferencedContainer = "container:Tiputron.xcodeproj">
+            BuildableName = "Simple Tip.app"
+            BlueprintName = "Simple Tip"
+            ReferencedContainer = "container:Simple Tip.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
