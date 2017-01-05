@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		3BDC94E71E1B1AEE00BA1698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC94E61E1B1AEE00BA1698 /* AppDelegate.swift */; };
-		3BDC94E91E1B1AEE00BA1698 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC94E81E1B1AEE00BA1698 /* ViewController.swift */; };
+		3BDC94E91E1B1AEE00BA1698 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC94E81E1B1AEE00BA1698 /* MainViewController.swift */; };
 		3BDC94EC1E1B1AEE00BA1698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDC94EA1E1B1AEE00BA1698 /* Main.storyboard */; };
 		3BDC94EE1E1B1AEE00BA1698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BDC94ED1E1B1AEE00BA1698 /* Assets.xcassets */; };
 		3BDC94F11E1B1AEE00BA1698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDC94EF1E1B1AEE00BA1698 /* LaunchScreen.storyboard */; };
+		3BDC94F91E1B4FED00BA1698 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC94F81E1B4FED00BA1698 /* SettingsViewController.swift */; };
+		3BDC94FB1E1E0E0400BA1698 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC94FA1E1E0E0400BA1698 /* SettingsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BDC94E31E1B1AEE00BA1698 /* Tiputron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiputron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDC94E61E1B1AEE00BA1698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BDC94E81E1B1AEE00BA1698 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BDC94E81E1B1AEE00BA1698 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3BDC94EB1E1B1AEE00BA1698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BDC94ED1E1B1AEE00BA1698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BDC94F01E1B1AEE00BA1698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BDC94F21E1B1AEE00BA1698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BDC94F81E1B4FED00BA1698 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3BDC94FA1E1E0E0400BA1698 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				3BDC94E61E1B1AEE00BA1698 /* AppDelegate.swift */,
-				3BDC94E81E1B1AEE00BA1698 /* ViewController.swift */,
+				3BDC94E81E1B1AEE00BA1698 /* MainViewController.swift */,
 				3BDC94EA1E1B1AEE00BA1698 /* Main.storyboard */,
 				3BDC94ED1E1B1AEE00BA1698 /* Assets.xcassets */,
 				3BDC94EF1E1B1AEE00BA1698 /* LaunchScreen.storyboard */,
 				3BDC94F21E1B1AEE00BA1698 /* Info.plist */,
+				3BDC94F81E1B4FED00BA1698 /* SettingsViewController.swift */,
+				3BDC94FA1E1E0E0400BA1698 /* SettingsManager.swift */,
 			);
 			path = Tiputron;
 			sourceTree = "<group>";
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BDC94E91E1B1AEE00BA1698 /* ViewController.swift in Sources */,
+				3BDC94FB1E1E0E0400BA1698 /* SettingsManager.swift in Sources */,
+				3BDC94E91E1B1AEE00BA1698 /* MainViewController.swift in Sources */,
 				3BDC94E71E1B1AEE00BA1698 /* AppDelegate.swift in Sources */,
+				3BDC94F91E1B4FED00BA1698 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +267,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Tiputron/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.sterling.Tiputron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,6 +280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Tiputron/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pw.sterling.Tiputron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
