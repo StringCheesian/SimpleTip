@@ -27,7 +27,9 @@ class SettingsViewController: UITableViewController {
             let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0))
             let textField = cell?.viewWithTag(1) as! UITextField
             if let text = textField.text {
-                SettingsManager.setTipAmount(Int(text)!, atIndex: i)
+                if (!text.isEmpty) {
+                    SettingsManager.setTipPercentage(Int(text)!, atIndex: i)
+                }
             }
         }
     }
