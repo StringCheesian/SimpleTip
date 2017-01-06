@@ -10,6 +10,16 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    @objc func GotDefaultTapped(withNotification notification : NSNotification) {
+        if let index = tableView.indexPath(for: notification.object as! UITableViewCell)?.row {
+            SettingsManager.defaultIndex = index
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,15 +28,16 @@ class SettingsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsViewController.GotDefaultTapped(withNotification:)), name: DefaultPercentageTappedNotification, object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         for i in 0...2 {
-            let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0))
-            let textField = cell?.viewWithTag(1) as! UITextField
-            if let text = textField.text {
+            let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! SettingsPercentageCell
+            if let text = cell.percentageField.text {
                 if (!text.isEmpty) {
                     SettingsManager.setTipPercentage(Int(text)!, atIndex: i)
                 }
@@ -52,10 +63,10 @@ class SettingsViewController: UITableViewController {
     }*/
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath) as! SettingsPercentageCell
 
-        let textField = cell .viewWithTag(1) as! UITextField
-        textField.text = String(SettingsManager.tipPercentage(at: indexPath.row))
+        cell.isDefault = (SettingsManager.defaultIndex == indexPath.row)
+        cell.percentageField.text = String(SettingsManager.tipPercentage(at: indexPath.row))
 
         return cell
     }

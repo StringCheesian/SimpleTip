@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        
+        percentageControl.selectedSegmentIndex = SettingsManager.defaultIndex
     }
 
     override func viewWillAppear(_ animated: Bool) {

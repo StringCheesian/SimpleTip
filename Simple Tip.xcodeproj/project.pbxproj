@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B8629ED1E2039A50010B0E3 /* SettingsPercentageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8629EC1E2039A50010B0E3 /* SettingsPercentageCell.swift */; };
 		3BDC94E71E1B1AEE00BA1698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC94E61E1B1AEE00BA1698 /* AppDelegate.swift */; };
 		3BDC94E91E1B1AEE00BA1698 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC94E81E1B1AEE00BA1698 /* MainViewController.swift */; };
 		3BDC94EC1E1B1AEE00BA1698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDC94EA1E1B1AEE00BA1698 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B8629EC1E2039A50010B0E3 /* SettingsPercentageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPercentageCell.swift; sourceTree = "<group>"; };
 		3BDC94E31E1B1AEE00BA1698 /* Simple Tip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Tip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDC94E61E1B1AEE00BA1698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BDC94E81E1B1AEE00BA1698 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				3BDC94E81E1B1AEE00BA1698 /* MainViewController.swift */,
 				3BDC94F81E1B4FED00BA1698 /* SettingsViewController.swift */,
 				3BDC94FA1E1E0E0400BA1698 /* SettingsManager.swift */,
+				3B8629EC1E2039A50010B0E3 /* SettingsPercentageCell.swift */,
 				3BDC94EA1E1B1AEE00BA1698 /* Main.storyboard */,
 				3BDC94ED1E1B1AEE00BA1698 /* Assets.xcassets */,
 				3BDC94EF1E1B1AEE00BA1698 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BDC94FB1E1E0E0400BA1698 /* SettingsManager.swift in Sources */,
+				3B8629ED1E2039A50010B0E3 /* SettingsPercentageCell.swift in Sources */,
 				3BDC94E91E1B1AEE00BA1698 /* MainViewController.swift in Sources */,
 				3BDC94E71E1B1AEE00BA1698 /* AppDelegate.swift in Sources */,
 				3BDC94F91E1B4FED00BA1698 /* SettingsViewController.swift in Sources */,
@@ -307,6 +311,7 @@
 				3BDC94F71E1B1AEE00BA1698 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

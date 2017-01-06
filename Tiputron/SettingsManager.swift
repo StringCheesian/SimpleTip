@@ -14,9 +14,21 @@ class SettingsManager {
         "Settings.tipPercentage2",
         "Settings.tipPercentage3",
     ]
+    private static let settingsDefaultCodeName = "Settings.defaultTip"
     
     private static var registerDefaults: () {
-        UserDefaults.standard.register(defaults: [settingsCodeNames[0] : 10, settingsCodeNames[1] : 15, settingsCodeNames[2] : 20])
+        UserDefaults.standard.register(defaults: [settingsCodeNames[0] : 10, settingsCodeNames[1] : 15, settingsCodeNames[2] : 20, settingsDefaultCodeName : 2])
+    }
+    
+    public static var defaultIndex : Int {
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: settingsDefaultCodeName)
+        }
+        get {
+            registerDefaults
+            
+            return UserDefaults.standard.integer(forKey: settingsDefaultCodeName)
+        }
     }
     
     public static func tipPercentage(at index: Int) -> Int {

@@ -60,7 +60,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPE-2e-bcN" userLabel="Divider Line">
+                            <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPE-2e-bcN" userLabel="Divider Line">
                                 <rect key="frame" x="298" y="183" width="61" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -130,7 +130,7 @@
                         <sections>
                             <tableViewSection headerTitle="Tip Percentages" id="duX-tF-0Y1">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="K6h-uH-VN1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="K6h-uH-VN1" customClass="SettingsPercentageCell" customModule="Simple_Tip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K6h-uH-VN1" id="Xjp-w5-AYD">
@@ -138,63 +138,114 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PaX-00-rhz">
-                                                    <rect key="frame" x="16" y="0.0" width="359" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="209" height="43"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVg-kM-hSl">
+                                                    <rect key="frame" x="225" y="0.0" width="150" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="Koz-w6-mld"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Make Default"/>
+                                                    <connections>
+                                                        <action selector="defaultTapped" destination="K6h-uH-VN1" eventType="touchUpInside" id="49O-Rt-g2c"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="PaX-00-rhz" secondAttribute="trailing" id="PNU-nE-7af"/>
+                                                <constraint firstItem="uVg-kM-hSl" firstAttribute="top" secondItem="Xjp-w5-AYD" secondAttribute="top" id="2y8-Ss-onJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="uVg-kM-hSl" secondAttribute="trailing" id="AI1-Hl-tTy"/>
                                                 <constraint firstItem="PaX-00-rhz" firstAttribute="top" secondItem="Xjp-w5-AYD" secondAttribute="top" id="X71-bu-enD"/>
+                                                <constraint firstAttribute="bottom" secondItem="uVg-kM-hSl" secondAttribute="bottom" id="a1v-iI-ck4"/>
                                                 <constraint firstItem="PaX-00-rhz" firstAttribute="leading" secondItem="Xjp-w5-AYD" secondAttribute="leading" constant="16" id="ala-B0-QRf"/>
                                                 <constraint firstAttribute="bottom" secondItem="PaX-00-rhz" secondAttribute="bottom" id="fjR-DA-QKJ"/>
+                                                <constraint firstItem="uVg-kM-hSl" firstAttribute="leading" secondItem="PaX-00-rhz" secondAttribute="trailing" id="sGJ-10-dQr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="defaultButton" destination="uVg-kM-hSl" id="nIi-9c-iCq"/>
+                                            <outlet property="percentageField" destination="PaX-00-rhz" id="noV-cd-Nsp"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="x46-pQ-F5F">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="HNF-lZ-RFY" customClass="SettingsPercentageCell" customModule="Simple_Tip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x46-pQ-F5F" id="f4a-dj-ycC">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HNF-lZ-RFY" id="6s6-lR-fEv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SlP-og-GRY">
-                                                    <rect key="frame" x="16" y="0.0" width="359" height="43"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BEO-th-rIA">
+                                                    <rect key="frame" x="16" y="0.0" width="209" height="43"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-Dz-0Cc">
+                                                    <rect key="frame" x="225" y="0.0" width="150" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="VU6-DJ-tTa"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Make Default"/>
+                                                    <connections>
+                                                        <action selector="defaultTapped" destination="HNF-lZ-RFY" eventType="touchUpInside" id="cAK-Ve-hv6"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="SlP-og-GRY" firstAttribute="top" secondItem="f4a-dj-ycC" secondAttribute="top" id="2e7-8m-Z1K"/>
-                                                <constraint firstAttribute="trailing" secondItem="SlP-og-GRY" secondAttribute="trailing" id="XrI-QW-aCO"/>
-                                                <constraint firstItem="SlP-og-GRY" firstAttribute="leading" secondItem="f4a-dj-ycC" secondAttribute="leading" constant="16" id="laG-Ho-IcC"/>
-                                                <constraint firstAttribute="bottom" secondItem="SlP-og-GRY" secondAttribute="bottom" id="oB6-8i-0a0"/>
+                                                <constraint firstAttribute="bottom" secondItem="BEO-th-rIA" secondAttribute="bottom" id="0ba-b0-FLi"/>
+                                                <constraint firstAttribute="bottom" secondItem="dcf-Dz-0Cc" secondAttribute="bottom" id="7qN-Rr-n40"/>
+                                                <constraint firstItem="dcf-Dz-0Cc" firstAttribute="top" secondItem="6s6-lR-fEv" secondAttribute="top" id="NAb-qk-kFk"/>
+                                                <constraint firstItem="BEO-th-rIA" firstAttribute="leading" secondItem="6s6-lR-fEv" secondAttribute="leading" constant="16" id="NBO-7Q-m9a"/>
+                                                <constraint firstItem="BEO-th-rIA" firstAttribute="top" secondItem="6s6-lR-fEv" secondAttribute="top" id="POB-dl-opP"/>
+                                                <constraint firstItem="dcf-Dz-0Cc" firstAttribute="leading" secondItem="BEO-th-rIA" secondAttribute="trailing" id="dR6-hf-xhZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="dcf-Dz-0Cc" secondAttribute="trailing" id="gdT-9j-Uu6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="defaultButton" destination="dcf-Dz-0Cc" id="Uub-M0-mmT"/>
+                                            <outlet property="percentageField" destination="BEO-th-rIA" id="GJC-c3-ZQm"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="djM-uc-pOl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" id="EOR-BO-5Dy" customClass="SettingsPercentageCell" customModule="Simple_Tip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="djM-uc-pOl" id="6mm-Qo-wwf">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EOR-BO-5Dy" id="I0D-PB-SRX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n30-mr-6Fq">
-                                                    <rect key="frame" x="16" y="0.0" width="359" height="43"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Due-36-t9H">
+                                                    <rect key="frame" x="16" y="0.0" width="209" height="43"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRE-3w-Ii5">
+                                                    <rect key="frame" x="225" y="0.0" width="150" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="osi-7u-ran"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Make Default"/>
+                                                    <connections>
+                                                        <action selector="defaultTapped" destination="EOR-BO-5Dy" eventType="touchUpInside" id="Rxe-dL-Tow"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="n30-mr-6Fq" firstAttribute="top" secondItem="6mm-Qo-wwf" secondAttribute="top" id="PCt-77-fui"/>
-                                                <constraint firstItem="n30-mr-6Fq" firstAttribute="leading" secondItem="6mm-Qo-wwf" secondAttribute="leading" constant="16" id="l4x-A9-6Wg"/>
-                                                <constraint firstAttribute="bottom" secondItem="n30-mr-6Fq" secondAttribute="bottom" id="vuA-Ud-Ujz"/>
-                                                <constraint firstAttribute="trailing" secondItem="n30-mr-6Fq" secondAttribute="trailing" id="xTP-WR-RTs"/>
+                                                <constraint firstItem="Due-36-t9H" firstAttribute="top" secondItem="I0D-PB-SRX" secondAttribute="top" id="BAM-eY-OhB"/>
+                                                <constraint firstItem="LRE-3w-Ii5" firstAttribute="leading" secondItem="Due-36-t9H" secondAttribute="trailing" id="czN-ML-tmK"/>
+                                                <constraint firstAttribute="bottom" secondItem="LRE-3w-Ii5" secondAttribute="bottom" id="hKF-So-DV3"/>
+                                                <constraint firstItem="Due-36-t9H" firstAttribute="leading" secondItem="I0D-PB-SRX" secondAttribute="leading" constant="16" id="inL-tI-zmz"/>
+                                                <constraint firstItem="LRE-3w-Ii5" firstAttribute="top" secondItem="I0D-PB-SRX" secondAttribute="top" id="mhB-UM-3ZX"/>
+                                                <constraint firstAttribute="bottom" secondItem="Due-36-t9H" secondAttribute="bottom" id="oLu-0r-PrJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="LRE-3w-Ii5" secondAttribute="trailing" id="vao-zm-WPk"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="defaultButton" destination="LRE-3w-Ii5" id="nni-T5-0OZ"/>
+                                            <outlet property="percentageField" destination="Due-36-t9H" id="4C7-L0-Tfq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
