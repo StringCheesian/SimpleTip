@@ -23,6 +23,7 @@ class SettingsManager {
     public static var defaultIndex : Int {
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: settingsDefaultCodeName)
+            UserDefaults.standard.synchronize()
         }
         get {
             registerDefaults

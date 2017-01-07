@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let stalenessInterval : TimeInterval = 10.0 * 60
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var billField: UITextField!
@@ -16,15 +18,86 @@ class MainViewController: UIViewController {
     @IBOutlet weak var percentageControl: UISegmentedControl!
     @IBOutlet weak var dividerLine: UIView!
     
+    private var lastBillAmount : String {
+        get {
+            if let value = UserDefaults.standard.string(forKey: "MainView.BillAmount") {
+                return value
+            } else {
+                return ""
+            }
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: "MainView.BillAmount")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    private var lastPercentageIndex : Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "MainView.lastPercentageIndex")
+        }
+        set (newValue) {
+            UserDefaults.standard.set(newValue, forKey: "MainView.lastPercentageIndex")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    private var lastVisible : TimeInterval {
+        get {
+            return UserDefaults.standard.double(forKey: "MainView.lastVisible");
+        }
+        set(newValue) {
+            UserDefaults.standard.set(newValue, forKey: "MainView.lastVisible")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    private func updateLastVisible() {
+        if let amount = billField.text {
+            self.lastBillAmount = amount
+        } else {
+            self.lastBillAmount = ""
+        }
+        self.lastPercentageIndex = percentageControl.selectedSegmentIndex
+        self.lastVisible = NSDate.timeIntervalSinceReferenceDate
+    }
+    
+    @objc func resigningActive(withNotification notification : NSNotification) {
+        updateLastVisible()
+    }
+    
+    @objc func enteringForeground(withNotification notification : NSNotification) {
+        resetStateIfStale()
+    }
+
+    private func resetStateIfStale() {
+        if self.lastVisible + stalenessInterval < NSDate.timeIntervalSinceReferenceDate {
+            percentageControl.selectedSegmentIndex = SettingsManager.defaultIndex
+            billField.text = ""
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        percentageControl.selectedSegmentIndex = SettingsManager.defaultIndex
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.resigningActive(withNotification:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.enteringForeground(withNotification:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        
+        if self.lastVisible + stalenessInterval >= NSDate.timeIntervalSinceReferenceDate {
+            percentageControl.selectedSegmentIndex = lastPercentageIndex
+            billField.text = lastBillAmount
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        resetStateIfStale()
         
         for i in 0...2 {
             percentageControl.setTitle(String(SettingsManager.tipPercentage(at: i)) + "%", forSegmentAt: i)
@@ -36,6 +109,13 @@ class MainViewController: UIViewController {
         super.viewDidAppear(animated)
         
         billField.becomeFirstResponder()
+        updateLastVisible()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        updateLastVisible()
     }
     
     override func didReceiveMemoryWarning() {
